@@ -1,0 +1,67 @@
+# Real-Time Accident Prediction System Configuration
+
+# Model configuration
+model:
+  checkpoint_path: "checkpoints/model.pth"
+  model_name: "transformer_predictor"
+  pretrained: false
+  input_size: 512
+  hidden_size: 256
+  num_heads: 8
+  num_layers: 3
+
+# Decision thresholds
+decision_thresholds:
+  stop: 0.8        # High collision risk
+  slow: 0.5        # Medium collision risk
+  reroute: 0.2     # Low collision risk
+  proceed: 0.0     # No risk
+
+# Sensor configuration
+sensors:
+  camera:
+    enabled: true
+    fps: 30
+    resolution: [640, 480]
+    source: 0  # 0 for webcam, or path to video file
+  
+  lidar:
+    enabled: true
+    points_per_frame: 100
+    range: 100  # meters
+  
+  radar:
+    enabled: true
+    num_targets: 10
+    range: 200  # meters
+
+# Fusion configuration
+fusion:
+  method: "early"  # early, late, or deep
+  normalize: true
+  temporal_window: 5  # frames
+
+# Hazard detection configuration
+hazard_detection:
+  method: "yolo"  # yolo, ssd, custom
+  confidence_threshold: 0.5
+  nms_threshold: 0.45
+
+# GPU configuration
+gpu:
+  use_cuda: true
+  use_tensorrt: false
+  device: "cuda:0"
+  precision: "float32"  # float32 or float16
+
+# Logging configuration
+logging:
+  level: "INFO"
+  log_file: "logs/system.log"
+  verbose: true
+
+# System configuration
+system:
+  max_fps: 30
+  batch_size: 1
+  num_workers: 2
