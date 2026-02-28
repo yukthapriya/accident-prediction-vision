@@ -25,6 +25,3 @@ A **state-of-the-art real-time multi-sensor fusion system** for autonomous accid
 
 ---
 
-## 📊 System Overview
-
-### Architecture Diagram
