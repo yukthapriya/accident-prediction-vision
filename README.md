@@ -7,8 +7,7 @@
 
 A **state-of-the-art real-time multi-sensor fusion system** for autonomous accident prediction. Ingests camera, LiDAR, and radar data simultaneously, detects hazards in real-time, predicts collision probability using transformer-based temporal models, and provides decision-ready outputs (STOP, SLOW, REROUTE).
 
-**Perfect for**: Tesla Autopilot, NVIDIA autonomous vehicles, robotaxis, and edge deployment.
-
+Designed for robotaxi and autonomous vehicle safety stacks requiring real-time sensor fusion and collision prediction.
 ---
 
 ## 🎯 Key Features
